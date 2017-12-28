@@ -1,0 +1,300 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Euromada</title>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/uikit.js"></script>
+<script type="text/javascript" src="js/dropdown.min.js"></script>
+<script type="text/javascript" src="js/transition.min.js"></script>
+<script type="text/javascript" src="js/uikit-icons.js"></script>
+<style type="text/css">
+/* UI semantic */
+  @import url("css/semantic.css");
+  @import url("css/dropdown.css");
+  @import url("css/transition.css");
+/* UIkit */
+  @import url("css/uikit.css");
+  @import url('https://fonts.googleapis.com/css?family=Exo:300,400,700');
+
+  html {
+    font-family: 'Exo', sans-serif;
+  }
+  .main-navigation {
+    margin-right: 0px;
+    margin-left: 18%;
+  }
+  a.uk-logo img {
+    width: 150px;
+  }
+  ul.er-subnav {
+    background: #AAAAAA;
+    margin-bottom: 0px;
+  }
+  ul.er-subnav li > a {
+    font-family: 'Exo', sans-serif;
+    color: #ffffff !important;
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+  }
+  ul.er-subnav li > a:hover, .uk-active, .uk-active a {
+    background: #001689 !important;
+  }
+  .er-subnav > li.er-publisher-car {
+    background: #41A75F;
+  }
+
+  ul.er-subnav li {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .er-subnav li a {
+    font-size: 12px !important;
+    font-weight: bolder;
+  }
+  .er-number {
+    width: inherit;
+    float: right;
+  }
+  .er-number p {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .er-padding-left-small {
+    padding-left: 0px;
+    padding-top: 5px;
+  }
+  .er-icon-flag {
+    width: 15px;
+    height: 15px;
+  }
+  .er-user-subnav a:hover .er-user-text,
+  .er-user-subnav a:hover .er-user-icon {
+    color: #000000;
+  }
+  .er-user-subnav {
+    margin-bottom: 0px;
+  }
+
+  .er-user-subnav a:hover {
+    background: #F6EA11 !important;
+  }
+  .er-user-subnav a {
+    background: #343434 !important;
+    padding-bottom: 11px !important;
+    padding-top: 7px !important;
+  }
+  .er-user-icon {
+    color: white;
+   }
+  .er-user-text {
+    padding-left: 5px;
+    position: relative;
+    top: 3px;
+    font-weight: bold;
+    color: white;
+  }
+
+  .er-search {
+    background-color: #AAAAAA;
+  }
+  .er-information {
+    background-color: #CBCBCB;
+  }
+  .er-information h2, .er-h2 {
+    font-size: 11pt;
+    font-weight: bold;
+  }
+
+  /* Override Class */
+  .uk-button-euromada:hover {
+    background-color: #1730b0;
+  }
+  .uk-button-euromada {
+    background-color: #001689;
+    color: #ffffff;
+  }
+  .uk-padding-medium {
+    padding: 40px !important;
+  }
+
+  .ui.selection.dropdown {
+    border-radius: 0 !important;
+  }
+  .ui.fluid.dropdown > .dropdown.icon {
+    background-color: #D8D8D8;
+    margin-right: -13px;
+  }
+
+
+</style>
+<script type="text/javascript">
+  (function($){
+    $(document).ready(function() {
+      $('.ui.normal.dropdown')
+        .dropdown({
+          maxSelections: 3
+        })
+      ;
+    })
+  })(jQuery)
+</script>
+</head>
+
+<body>
+	<header>
+  	<div id="er-header-top" class="uk-content uk-content-small">
+      <div class="uk-container ukt-container-small">
+        <div class="uk-margin-medium-bottom uk-margin-top" uk-grid>
+          <div class="uk-width-1-2 er-logo">
+            <!-- logo -->
+            <a href="#link" class="uk-logo">
+              <img src="img/logo.jpg" />
+            </a>
+          </div>	
+          <div class="uk-width-1-2">
+            <!-- contact number -->
+            <div class="er-number">
+              <div class="uk-margin-remove" uk-grid>
+                <div class="uk-width-1-4">
+                  <span class="uk-icon uk-icon-image er-icon-flag" style="background-image: url(img/flags/france.png);"></span>
+                </div>
+                <div class="uk-width-3-4 er-padding-left-small"><p class="uk-text-small uk-margin-remove">+33 768 92 34 13</p></div>
+              </div>
+  
+              <div class="uk-margin-remove" uk-grid>
+                <div class="uk-width-1-4">
+                  <span class="uk-icon uk-icon-image er-icon-flag" style="background-image: url(img/flags/madagascar.png);"></span>
+                </div>
+                <div class="uk-width-3-4 er-padding-left-small">
+                  <p class="uk-text-small uk-margin-remove">+261 32 632 95 05</p>
+                  <p class="uk-text-small uk-margin-remove">+261 34 114 80 51</p>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="er-header-nav" class="uk-container uk-container-small">
+      <!-- main navigation -->
+      <nav class="uk-navbar-container main-navigation" style="margin-bottom: 1 5px" uk-navbar>
+        <div class="uk-navbar-right">
+          <ul class="uk-subnav uk-subnav-pill er-subnav" uk-margin>
+            <li class="uk-active"><a href="#">Accueil</a></li>
+            <li><a href="#">Offres</a></li>
+            <li><a href="#">Promotion</a></li>
+            <li><a href="#">Nous contacter</a></li>
+            <li class="er-publisher-car"><a href="#">Publier une voiture</a></li>
+          </ul>
+        </div>
+        <div class="uk-navbar-right">
+            <ul class="uk-subnav uk-subnav-pill er-user-subnav" uk-margin>
+                <li>
+                  <a href="#">
+                    <span class="er-user-icon" uk-icon="icon: user"></span> 
+                    <span class="er-user-text">Mon compte</span>
+                  </a>
+                </li>
+              </ul>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+  <div id="primary">
+  	<section class="er-slider">
+      <div uk-slideshow="animation: push; ratio: 9:3.2">
+        <div class="uk-position-relative uk-visible-toggle uk-light">
+          <ul class="uk-slideshow-items">
+            <li><img src="img/slider/04.jpg" alt="" uk-cover></li>
+            <li><img src="img/slider/02.jpg" alt="" uk-cover></li>
+            <li><img src="img/slider/03.jpg" alt="" uk-cover></li>
+            <li><img src="img/slider/01.jpg" alt="" uk-cover></li>
+          </ul>
+  
+          <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+        </div>
+    
+      
+      </div>
+    </section>
+    <section class="er-search uk-padding-medium uk-padding-remove-left uk-padding-remove-right">
+      <!-- search section -->
+      <div class="uk-section-transparent uk-section-large uk-margin-remove uk-padding-remove">
+        <div class="uk-container uk-container-small">
+          <form class="uk-grid-small" uk-grid>
+            <div class="uk-width-1-6@s">
+                <select name="skills" class="ui fluid normal dropdown">
+                  <option value="">Catégorie</option>
+                  <option value="angular">Angular</option>
+                  <option value="css">CSS</option>
+                  <option value="design">Graphic Design</option>
+                </select>
+            </div>
+            <div class="uk-width-1-6@s">
+                <select name="skills" class="ui fluid normal dropdown">
+                    <option value="">Marque</option>
+                    <option value="angular">Angular</option>
+                    <option value="css">CSS</option>
+                    <option value="design">Graphic Design</option>
+                  </select>
+            </div>
+            <div class="uk-width-1-6@s">
+                <select name="skills" class="ui fluid normal dropdown">
+                    <option value="">Modèle</option>
+                    <option value="angular">Angular</option>
+                    <option value="css">CSS</option>
+                    <option value="design">Graphic Design</option>
+                  </select>
+            </div>
+            <div class="uk-width-1-6@s">
+                <select name="skills" class="ui fluid normal dropdown">
+                    <option value="">Prix maxi</option>
+                    <option value="angular">Angular</option>
+                    <option value="css">CSS</option>
+                    <option value="design">Graphic Design</option>
+                  </select>
+            </div>
+            <div class="uk-width-1-6@s">
+                <select name="skills" class="ui fluid normal dropdown">
+                    <option value="">Carburant</option>
+                    <option value="angular">Angular</option>
+                    <option value="css">CSS</option>
+                    <option value="design">Graphic Design</option>
+                  </select>
+            </div>
+            <div class="uk-width-1-6@s">
+                <button class="uk-button uk-button-euromada">CHERCHER</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    </section>
+    <section class="er-information uk-padding-medium uk-padding-remove-left uk-padding-remove-right">
+      <!-- euromada description -->
+      <div class="uk-section-transparent uk-section-large uk-margin-remove uk-padding-remove">
+        <div class="uk-container uk-container-small">
+          <h2 class="uk-text-uppercase">NOTRE MÉTIER EST D'ACHETER ET D’EXPÉDIER DES VOITURES D'OCCASION DE L'EUROPE VERS 
+            MADAGASCAR.</h2>
+          <p>Grâce à notre antenne installée en FRANCE : EUROMADA offre une meilleure solution pour les particuliers ou entreprises à Madagascar qui 
+            cherchent des moyens sûrs et abordables pour acheter et importer les voitures de leur choix depuis l’Europe vers Madagascar.</p>
+        </div>
+      </div>
+    </section>
+    <div id="primary-content">
+      <div class="uk-section uk-section-large">
+        <div class="uk-container uk-container-large">
+        	
+        </div>
+      </div>
+    </div>
+  	
+  </div>
+</body>
+</html>
