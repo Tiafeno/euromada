@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Euromada</title>
+<title>Offres - Euromada</title>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/underscore-min.js"></script>
 <script type="text/javascript" src="js/uikit.js"></script>
@@ -12,32 +12,99 @@
 <script type="text/javascript" src="js/rating.min.js"></script>
 <script type="text/javascript" src="js/transition.min.js"></script>
 <script type="text/javascript" src="js/uikit-icons.js"></script>
-<!-- Vuejs app -->
+
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script type="text/javascript" src="app.js"></script>
-
 <style type="text/css">
-/** UI semantic */
+/* UI semantic */
   @import url("css/semantic.css");
   @import url("css/dropdown.css");
   @import url("css/transition.css");
   @import url("css/dimmer.css");
   @import url("css/rating.css");
-/** UIkit */
+/* UIkit */
   @import url("css/uikit.css");
   @import url("style.css");
-/** Google fonts */
   @import url('https://fonts.googleapis.com/css?family=Exo:300,400,700');
+
+  a.er-list-title {
+    font-size: 15.98px;
+    color: rgba(0, 0, 0, 0.85) !important;
+    font-weight: bold;
+  }
+  .ui.primary.buttons .button, .ui.primary.button {
+    background-color: #001689 !important;
+  }
+  .ui.primary.buttons .button:hover, .ui.primary.button:hover {
+    background-color: #f6bf11 !important;
+    color: #000000;
+  }
+  .er-sidebar section .image > img { 
+    padding: 16px;
+  }
+  .er-sidebar section .er-sidebar-title {
+    background-color: #F6BF11 !important;
+    font-weight: bold;
+  }
+  .er-sidebar section > .content .meta > p {
+    font-weight: 300;
+  }
+  .er-sidebar section .extra.content .ui.button {
+    padding: 11px !important;
+  }
+  .er-button-voir {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+  .er-sidebar section .extra.content .ui.button, .er-button-voir {
+    font-size: 14px !important;
+    border-radius: 0 !important;
+  }
+  .er-label {
+    font-size: 0.614286rem !important;
+  }
+  .er-pagination .uk-icon {
+    color: #001689 !important;
+    font-weight: bold;
+  }
+  .er-photo  {
+    display: block;
+    position: absolute;
+    width: 28px;
+    text-align: center;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    background-image: url(img/camera.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 0px -1.2px;
+    color: #ffffff;
+    font-size: 11px;
+    left: 5px;
+    top: 5px;
+  }
 </style>
 <script type="text/javascript">
   (function($){
     $(document).ready(function() {
 
-      $('.ui.dropdown').dropdown();
-      
     });
   })(jQuery)
 </script>
+
+<script type="text/x-template" id="template-pagination">
+  <ul class="uk-pagination uk-flex-center" uk-margin>
+      <li><a href="#"><span uk-pagination-previous></span></a></li>
+      <li><a href="#">1</a></li>
+      <li class="uk-disabled"><span>...</span></li>
+      <li><a href="#">5</a></li>
+      <li><a href="#">6</a></li>
+      <li class="uk-active"><span>7</span></li>
+      <li><a href="#">8</a></li>
+      <li><a href="#"><span uk-pagination-next></span></a></li>
+  </ul>
+</script>
+
 </head>
 
 <body>
@@ -66,8 +133,8 @@
       <nav class="uk-navbar-container main-navigation" style="margin-bottom: 15px" uk-navbar>
         <div class="uk-navbar-right">
           <ul class="uk-subnav uk-subnav-pill er-subnav" uk-margin>
-            <li class="uk-active"><a href="#">Accueil</a></li>
-            <li><a href="offres.html">Offres</a></li>
+            <li><a href="index.html">Accueil</a></li>
+            <li class="uk-active"><a href="#">Offres</a></li>
             <li><a href="#">Promotion</a></li>
             <li><a href="#">Nous contacter</a></li>
             <li class="er-publisher-car"><a href="#">Publier une voiture</a></li>
@@ -87,24 +154,9 @@
       </nav>
     </div>
   </header>
+
   <div id="primary">
-  	<section class="er-slider">
-      <div uk-slideshow="animation: push; ratio: 9:3.2">
-        <div class="uk-position-relative uk-visible-toggle uk-light">
-          <ul class="uk-slideshow-items">
-            <li><img src="img/slider/04.jpg" alt="" uk-cover></li>
-            <li><img src="img/slider/02.jpg" alt="" uk-cover></li>
-            <li><img src="img/slider/03.jpg" alt="" uk-cover></li>
-            <li><img src="img/slider/01.jpg" alt="" uk-cover></li>
-          </ul>
-  
-          <!-- <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> -->
-          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-        </div>
-    
-      
-      </div>
-    </section>
+
     <section class="er-search uk-padding-medium uk-padding-remove-left uk-padding-remove-right">
       <!-- search section -->
       <div class="uk-section-transparent uk-section-large uk-margin-remove uk-padding-remove">
@@ -158,147 +210,90 @@
       </div>
       
     </section>
-    <section class="er-information uk-padding-medium uk-padding-remove-left uk-padding-remove-right">
-      <!-- euromada description -->
-      <div class="uk-section-transparent uk-section-large uk-margin-remove uk-padding-remove">
-        <div class="uk-container uk-container-small">
-          <h2 class="uk-text-uppercase">NOTRE MÉTIER EST D'ACHETER ET D’EXPÉDIER DES VOITURES D'OCCASION DE L'EUROPE VERS 
-            MADAGASCAR.</h2>
-          <p>Grâce à notre antenne installée en FRANCE : EUROMADA offre une meilleure solution pour les particuliers ou entreprises à Madagascar qui 
-            cherchent des moyens sûrs et abordables pour acheter et importer les voitures de leur choix depuis l’Europe vers Madagascar.</p>
-        </div>
-      </div>
-    </section>
-    <div id="primary-content">
+    
+
+    <div id="primary-content" >
       <div class="uk-section uk-section-large uk-padding-medium">
         <div class="uk-container uk-container-small">
+            
+        	<div id="app-lists">
+            <h2 class="uk-text-uppercase er-h2 uk-margin-remove-bottom">Voitures occasion</h2>
+            <p class="uk-text-small uk-margin-remove-top">179 711 annonces</p>
 
-        	<div id="app-publisher" class="er-annonce-publish">
-            <h2 class="uk-text-uppercase er-h2 uk-margin-remove-bottom">Les dernières annonces publiées</h2>
-            <p class="uk-text-small uk-margin-remove-top">Voitures occasion</p>
-
-            <ul id="er-annonce" class="uk-switcher uk-margin">
-
-                <li class="uk-position-relative">
-                  <div class="ui special cards">
-                    <div class="card" v-for="todo in itemI">
-                      <div class="blurring dimmable image">
-                        <div class="ui dimmer">
-                          <div class="content">
-                            <div class="center">
-                              <div class="ui inverted button">Voir</div>
-                            </div>
-                          </div>
-                        </div>
-                        <img v-bind:src="todo.link">
-                      </div>
-                      <div class="content">
-                        <a class="header er-h2">{{ todo.title }}</a>
-                        <div class="meta">
-                          <span class="cost">{{ todo.cost | ariary }} </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="ui special cards">
-                    <div class="card" v-for="todo in itemII">
-                      <div class="blurring dimmable image">
-                        <div class="ui dimmer">
-                          <div class="content">
-                            <div class="center">
-                              <div class="ui inverted button">Voir</div>
-                            </div>
-                          </div>
-                        </div>
-                        <img v-bind:src="todo.link">
-                      </div>
-                      <div class="content">
-                        <a class="header er-h2">{{ todo.title }}</a>
-                        <div class="meta">
-                          <span class="cost">{{ todo.cost | ariary }}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="ui special cards">
-                    <div class="card" v-for="todo in itemIII">
-                      <div class="blurring dimmable image">
-                        <div class="ui dimmer">
-                          <div class="content">
-                            <div class="center">
-                              <div class="ui inverted button">Voir</div>
-                            </div>
-                          </div>
-                        </div>
-                        <img v-bind:src="todo.link">
-                      </div>
-                      <div class="content">
-                        <a class="header er-h2">{{ todo.title }}</a>
-                        <div class="meta">
-                          <span class="cost">{{ todo.cost | ariary }} </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-            </ul>
-
-            <div class="uk-flex uk-flex-center">
-              <div uk-switcher="animation: uk-animation-slide-right-medium; connect: #er-annonce;" class="uk-dotnav" >
-                  <li class="uk-active"><a href="#">Item 1</a></li>
-                  <li><a href="#">Item 2</a></li>
-                  <li><a href="#">Item 3</a></li>
+            <!-- order select -->
+            <div uk-grid>
+              <div class="uk-width-1-5@s">
+                <select name="orderBy" v-model="sorting" v-on:change="sortBy" class="ui fluid normal dropdown">
+                  <option value="">Trier par</option>
+                  <option value="title">Titre</option>
+                  <option value="cost">Prix</option>
+                </select>
               </div>
             </div>
-          </div>
+            <!-- end -->
 
-          <div id="app-benefit" class="er-annonce-benefit uk-margin-large-top">
-            <h2 class="uk-text-uppercase er-h2 uk-margin-remove-bottom">NOS PRESTATIONS</h2>
-            <div class="uk-container uk-margin-medium-top">
-              <div class="ui special cards">
-                <div class="card" v-for="benefit in benefits">
-                  <div class="blurring dimmable image">
-                    <div class="ui dimmer">
-                      <div class="content">
-                        <div class="center">
-                          <div class="ui inverted button">Voir</div>
-                        </div>
+            <div class="uk-margin-large-top" uk-grid>
+              <div class="er-annonce-list uk-width-2-3@m">
+
+                <div class="ui divided items">
+
+                  <div class="item" v-for="advert in adverts">
+                    <div class="image">
+                      <p class="er-photo">{{ advert.countPic }}</p>
+                      <img v-bind:src="advert.link" v-bind:alt="advert.title">
+                    </div>
+                    <div class="content">
+                      <div class="extra">
+                        <div class="ui left floated"><a class="header er-list-title">{{ advert.title }}</a></div>
+                        <div class="ui right floated er-h2" style="color: #000"><p>{{ advert.cost | ariary }}</p></div>
+                      </div>
+                      <div class="meta">
+                        <span class="cinema">{{ advert.dateadd }}</span>
+                      </div>
+                      <div class="description">
+                        <p></p>
+                      </div>
+                      <div class="extra">
+                        <div class="ui label er-label">Badget</div>
+                        <div class="ui right floated primary button er-button-voir">Voir</div>
                       </div>
                     </div>
-                    <img v-bind:src="benefit.link">
                   </div>
-                  <div class="content">
-                    <a class="header er-h2 uk-text-uppercase"> {{ benefit.title }}</a>
-                    <div class="meta">
-                      <span class="date uk-text-uppercase">à partir de </span>
-                      <p class="er-h2">{{ benefit.cost | ariary }}</p>
-                    </div>
+
+                  <div class="er-pagination">
+                    <pagination></pagination>
                   </div>
+
                 </div>
+
+              </div> <!-- /.er-annonce-list -->
+              <div class="er-sidebar uk-width-1-3@m">
+                <section>
+                  <div class="ui centered card">
+                    <div class="content er-sidebar-title">
+                        <a class="header uk-text-uppercase er-h2">les promotions</a>
+                    </div>
+                    <div class="image">
+                        <img src="img/products/auto.png">
+                    </div>
+                    <div class="content">
+                      <div class="meta">
+                          <span class="date uk-text-uppercase er-h2">NISSAN QASHQAI S 2017</span>
+                          <p class="er-sidebar-cost">20.000.000 MGA</p>
+                        </div>
+                    </div>
+                    <div class="extra content uk-flex">
+                        <div class="ui buttons uk-margin-auto">
+                          <div class="ui primary green button">Voir tous</div>
+                        </div>
+                      </div>
+                  </div>
+                </section>
               </div>
             </div>
+
           </div>
 
-          <div id="app-other-publisher" class="uk-margin-large-top">
-            <div class="uk-flex"><h2 class="uk-text-uppercase uk-text-center uk-margin-auto er-h2 er-underline">Autre annonces</h2></div>
-            <div class="uk-container uk-container-small uk-margin-top">
-              <p class="uk-text-center uk-margin-auto uk-width-xlarge">Vous pouvez également consulter d’autres sites web à partir des liens ci-dessous.
-                Communiquez-nous la référence que vous souhaitez commander et nous vous ferons un devis.</p>
-              <div class="uk-width-xlarge uk-margin-auto" uk-grid>
-                <div class="uk-width-1-4@s"><img class="uk-logo" src="img/logo/leboncoin.jpg" /></div>
-                <div class="uk-width-1-4@s"><img class="uk-logo" src="img/logo/paruvendu.jpg" /></div>
-                <div class="uk-width-1-4@s"><img class="uk-logo" src="img/logo/mobile.de.jpg" /></div>
-                <div class="uk-width-1-4@s"><img class="uk-logo" src="img/logo/europe-camions.jpg" /></div>
-
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -313,7 +308,7 @@
                 <h2 class="er-footer-title uk-margin-remove-top uk-text-uppercase">DES CLIENTS SATISFAITS</h2>
                 <p class="uk-padding-remove uk-margin-remove er-footer-meta">Lire tous les témoignages</p>
                 <div class="uk-margin-small-top"><div class="ui rating" data-rating="3" data-max-rating="5"></div></div>
-                
+
                 <script type="text/javascript">
 
                 (function($){

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Euromada</title>
+<title>Produit - Euromada</title>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/underscore-min.js"></script>
 <script type="text/javascript" src="js/uikit.js"></script>
@@ -88,23 +88,7 @@
     </div>
   </header>
   <div id="primary">
-  	<section class="er-slider">
-      <div uk-slideshow="animation: push; ratio: 9:3.2">
-        <div class="uk-position-relative uk-visible-toggle uk-light">
-          <ul class="uk-slideshow-items">
-            <li><img src="img/slider/04.jpg" alt="" uk-cover></li>
-            <li><img src="img/slider/02.jpg" alt="" uk-cover></li>
-            <li><img src="img/slider/03.jpg" alt="" uk-cover></li>
-            <li><img src="img/slider/01.jpg" alt="" uk-cover></li>
-          </ul>
-  
-          <!-- <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a> -->
-          <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
-        </div>
-    
-      
-      </div>
-    </section>
+
     <section class="er-search uk-padding-medium uk-padding-remove-left uk-padding-remove-right">
       <!-- search section -->
       <div class="uk-section-transparent uk-section-large uk-margin-remove uk-padding-remove">
@@ -158,130 +142,33 @@
       </div>
       
     </section>
-    <section class="er-information uk-padding-medium uk-padding-remove-left uk-padding-remove-right">
-      <!-- euromada description -->
-      <div class="uk-section-transparent uk-section-large uk-margin-remove uk-padding-remove">
-        <div class="uk-container uk-container-small">
-          <h2 class="uk-text-uppercase">NOTRE MÉTIER EST D'ACHETER ET D’EXPÉDIER DES VOITURES D'OCCASION DE L'EUROPE VERS 
-            MADAGASCAR.</h2>
-          <p>Grâce à notre antenne installée en FRANCE : EUROMADA offre une meilleure solution pour les particuliers ou entreprises à Madagascar qui 
-            cherchent des moyens sûrs et abordables pour acheter et importer les voitures de leur choix depuis l’Europe vers Madagascar.</p>
-        </div>
-      </div>
-    </section>
+
     <div id="primary-content">
       <div class="uk-section uk-section-large uk-padding-medium">
         <div class="uk-container uk-container-small">
-
-        	<div id="app-publisher" class="er-annonce-publish">
-            <h2 class="uk-text-uppercase er-h2 uk-margin-remove-bottom">Les dernières annonces publiées</h2>
-            <p class="uk-text-small uk-margin-remove-top">Voitures occasion</p>
-
-            <ul id="er-annonce" class="uk-switcher uk-margin">
-
-                <li class="uk-position-relative">
-                  <div class="ui special cards">
-                    <div class="card" v-for="todo in itemI">
-                      <div class="blurring dimmable image">
-                        <div class="ui dimmer">
-                          <div class="content">
-                            <div class="center">
-                              <div class="ui inverted button">Voir</div>
-                            </div>
-                          </div>
-                        </div>
-                        <img v-bind:src="todo.link">
-                      </div>
-                      <div class="content">
-                        <a class="header er-h2">{{ todo.title }}</a>
-                        <div class="meta">
-                          <span class="cost">{{ todo.cost | ariary }} </span>
-                        </div>
-                      </div>
+          <div uk-grid>
+            <div class="uk-width-2-3@m">
+                <div class="uk-position-relative" uk-slideshow="animation: fade">
+                  <ul class="uk-slideshow-items">
+                    <li><img src="img/slideshow/01.jpg" alt="" uk-cover></li>
+                    <li><img src="img/slideshow/02.jpg" alt="" uk-cover></li>
+                    <li><img src="img/slideshow/03.jpg" alt="" uk-cover></li>
+                  </ul>
+                    
+                  <div class="uk-position-bottom-center uk-position-small">
+                    <div>
+                        <ul class="uk-thumbnav">
+                            <li uk-slideshow-item="0"><a href="#"><img src="img/slideshow/01.jpg" width="100" alt=""></a></li>
+                            <li uk-slideshow-item="1"><a href="#"><img src="img/slideshow/02.jpg" width="100" alt=""></a></li>
+                            <li uk-slideshow-item="2"><a href="#"><img src="img/slideshow/03.jpg" width="100" alt=""></a></li>
+                          </ul>
                     </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="ui special cards">
-                    <div class="card" v-for="todo in itemII">
-                      <div class="blurring dimmable image">
-                        <div class="ui dimmer">
-                          <div class="content">
-                            <div class="center">
-                              <div class="ui inverted button">Voir</div>
-                            </div>
-                          </div>
-                        </div>
-                        <img v-bind:src="todo.link">
-                      </div>
-                      <div class="content">
-                        <a class="header er-h2">{{ todo.title }}</a>
-                        <div class="meta">
-                          <span class="cost">{{ todo.cost | ariary }}</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-
-                <li>
-                  <div class="ui special cards">
-                    <div class="card" v-for="todo in itemIII">
-                      <div class="blurring dimmable image">
-                        <div class="ui dimmer">
-                          <div class="content">
-                            <div class="center">
-                              <div class="ui inverted button">Voir</div>
-                            </div>
-                          </div>
-                        </div>
-                        <img v-bind:src="todo.link">
-                      </div>
-                      <div class="content">
-                        <a class="header er-h2">{{ todo.title }}</a>
-                        <div class="meta">
-                          <span class="cost">{{ todo.cost | ariary }} </span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-            </ul>
-
-            <div class="uk-flex uk-flex-center">
-              <div uk-switcher="animation: uk-animation-slide-right-medium; connect: #er-annonce;" class="uk-dotnav" >
-                  <li class="uk-active"><a href="#">Item 1</a></li>
-                  <li><a href="#">Item 2</a></li>
-                  <li><a href="#">Item 3</a></li>
-              </div>
-            </div>
-          </div>
-
-          <div id="app-benefit" class="er-annonce-benefit uk-margin-large-top">
-            <h2 class="uk-text-uppercase er-h2 uk-margin-remove-bottom">NOS PRESTATIONS</h2>
-            <div class="uk-container uk-margin-medium-top">
-              <div class="ui special cards">
-                <div class="card" v-for="benefit in benefits">
-                  <div class="blurring dimmable image">
-                    <div class="ui dimmer">
-                      <div class="content">
-                        <div class="center">
-                          <div class="ui inverted button">Voir</div>
-                        </div>
-                      </div>
-                    </div>
-                    <img v-bind:src="benefit.link">
-                  </div>
-                  <div class="content">
-                    <a class="header er-h2 uk-text-uppercase"> {{ benefit.title }}</a>
-                    <div class="meta">
-                      <span class="date uk-text-uppercase">à partir de </span>
-                      <p class="er-h2">{{ benefit.cost | ariary }}</p>
-                    </div>
+                    
                   </div>
                 </div>
-              </div>
+            </div>
+            <div class="uk-width--1-3@m">
+
             </div>
           </div>
 
@@ -299,6 +186,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
