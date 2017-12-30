@@ -74,13 +74,27 @@ window.onload = function () {
 
 moment.locale("fr");
 var Lists = [{
-  title: "NISSAN QASHQAI S 2017",
+  id: 1,
+  title: "Mercedes ml 270 cdi",
   cost: 20548000,
   countPic: 7,
+  description: "",
   dateadd: moment().startOf('day').fromNow(),
-  link: 'img/products/auto.png'
+  link: 'img/products/auto.png',
+  gallery: [
+
+  ],
+  attributes : {
+    Mark: "Mercedes",
+    Model: "Classe M",
+    modelYear: "2002",
+    Mileage: "213000",
+    Fuel: "Diesel",
+    GearBox: "Automatique"
+  }
 },
 {
+  id: 2,
   title: "TCe 90 Energy Intens S&S eco2",
   cost: 13000000,
   countPic: 2,
@@ -88,6 +102,7 @@ var Lists = [{
   link: 'img/products/auto1.png'
 },
 {
+  id: 3,
   title: "Land Rover Range",
   cost: 12490000,
   countPic: 4,
@@ -95,6 +110,7 @@ var Lists = [{
   link: 'img/products/auto2.png'
 },
 {
+  id: 4,
   title: "Renault Captur",
   cost: 1509000,
   countPic: 1,
