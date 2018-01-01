@@ -237,7 +237,7 @@
 
                 <div class="ui divided items">
 
-                  <div class="item" v-for="advert in adverts">
+                  <div class="item" v-for="(advert, index) in adverts">
                     <div class="image">
                       <p class="er-photo">{{ advert.countPic }}</p>
                       <img v-bind:src="advert.link" v-bind:alt="advert.title">
@@ -255,7 +255,7 @@
                       </div>
                       <div class="extra">
                         <div class="ui label er-label">Badget</div>
-                        <div class="ui right floated primary button er-button-voir">Voir</div>
+                        <div class="ui right floated primary button er-button-voir" @click="routeLinkProduct(advert.id)">Voir</div>
                       </div>
                     </div>
                   </div>
