@@ -1,120 +1,145 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8">
-<title>Produit - Euromada</title>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/underscore-min.js"></script>
-<script type="text/javascript" src="js/uikit.js"></script>
-<script type="text/javascript" src="js/dropdown.min.js"></script>
-<script type="text/javascript" src="js/moment.min.js"></script>
-<script type="text/javascript" src="js/dimmer.min.js"></script>
-<script type="text/javascript" src="js/rating.min.js"></script>
-<script type="text/javascript" src="js/transition.min.js"></script>
-<script type="text/javascript" src="js/uikit-icons.js"></script>
-<!-- Vuejs app -->
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script src="https://unpkg.com/vue-router"></script>
-<script type="text/javascript" src="app.js"></script>
+  <meta charset="utf-8">
+  <title>Produit - Euromada</title>
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/underscore-min.js"></script>
+  <script type="text/javascript" src="js/uikit.js"></script>
+  <script type="text/javascript" src="js/dropdown.min.js"></script>
+  <script type="text/javascript" src="js/moment.min.js"></script>
+  <script type="text/javascript" src="js/dimmer.min.js"></script>
+  <script type="text/javascript" src="js/rating.min.js"></script>
+  <script type="text/javascript" src="js/transition.min.js"></script>
+  <script type="text/javascript" src="js/uikit-icons.js"></script>
+  <!-- Vuejs app -->
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://unpkg.com/vue-router"></script>
+  <script type="text/javascript" src="app.js"></script>
 
-<style type="text/css">
-/** UI semantic */
-  @import url("css/semantic.css");
-  @import url("css/dropdown.css");
-  @import url("css/transition.css");
-  @import url("css/dimmer.css");
-  @import url("css/rating.css");
-/** UIkit */
-  @import url("css/uikit.css");
-  @import url("style.css");
-/** Google fonts */
-  @import url('https://fonts.googleapis.com/css?family=Exo:300,400,700');
-  .er-h1 {
-    font-size: 12pt !important;
-    font-family: "Exo", sans-serif;
-    font-weight: bold;
-  }
-  .er-price {
-    font-size: 15pt;
-    font-weight: bold;
-    display: block;
-    width: 100%;
-  }
-  /** override css style */
-  .ui.primary.buttons .button, .ui.primary.button {
-    background-color: #001689 !important;
-  }
-  .er-button-voir:hover {
-    background-color: #f6bf11 !important;
-    color: #000000 !important;
-  }
-  .er-button-voir {
-    background-color: #001689 !important;
-    font-size: 14px !important;
-    border-radius: 0 !important;
-    color: #ffffff !important;
-  }
-  .er-button-voir i {
-    visibility: hidden;
-  }
-  .er-button-voir:hover i {
-    visibility:visible
-  }
-  .er-sidebar section .extra.content .ui.button {
-    padding: 11px !important;
-  }
-  .summary {
-    background: #E5E5E5;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 25px;
-    padding-bottom: 30px;
-  }
-  .ui.celled.table tr th, .ui.celled.table tr td {
-    border-left: none !important;
-  }
-  .ui.table {
-    border: none !important;
-  }
-  tr.er-product-specification {
-    background-color: #001689;
-    color: aliceblue;
-  }
-  .er-Exo {
-    font-family: "Exo", sans-serif;
-  }
-  .er-icon-button {
-    border-radius: 0px !important;
-  }
-  .content.er-share-title p {
-    color: #ffffff;
-  }
-  .content.er-share-title {
-    padding: 10px 20px;
-    background-color: #000000;
-  }
-  .er-card .meta {
-    padding-top: 10px;
-  }
-  .er-share-content {
-    border-bottom: 1px solid #DAD0C6;
-    padding-bottom: 9px;
-    border-left: 1px solid #DAD0C6;
-    border-right: 1px solid #DAD0C6;
-  }
-</style>
+  <style type="text/css">
+    /** UI semantic */
 
-<script type="text/javascript">
-  (function($){
-    $(document).ready(function() {
+    @import url("css/semantic.css");
+    @import url("css/dropdown.css");
+    @import url("css/transition.css");
+    @import url("css/dimmer.css");
+    @import url("css/rating.css");
+    /** UIkit */
 
-      $('.ui.dropdown').dropdown();
-      
-    });
-  })(jQuery)
-</script>
+    @import url("css/uikit.css");
+    @import url("style.css");
+    /** Google fonts */
 
-<script type="text/x-template" id="template-summary">
+    @import url('https://fonts.googleapis.com/css?family=Exo:300,400,700');
+    .er-h1 {
+      font-size: 12pt !important;
+      font-family: "Exo", sans-serif;
+      font-weight: bold;
+    }
+
+    .er-price {
+      font-size: 15pt;
+      font-weight: bold;
+      display: block;
+      width: 100%;
+    }
+
+    /** override css style */
+
+    .ui.primary.buttons .button,
+    .ui.primary.button {
+      background-color: #001689 !important;
+    }
+
+    .er-button-voir:hover {
+      background-color: #f6bf11 !important;
+      color: #000000 !important;
+    }
+
+    .er-button-voir {
+      background-color: #001689 !important;
+      font-size: 14px !important;
+      border-radius: 0 !important;
+      color: #ffffff !important;
+    }
+
+    .er-button-voir i {
+      visibility: hidden;
+    }
+
+    .er-button-voir:hover i {
+      visibility: visible
+    }
+
+    .er-sidebar section .extra.content .ui.button {
+      padding: 11px !important;
+    }
+
+    .summary {
+      background: #E5E5E5;
+      padding-left: 15px;
+      padding-right: 15px;
+      padding-top: 25px;
+      padding-bottom: 30px;
+    }
+
+    .ui.celled.table tr th,
+    .ui.celled.table tr td {
+      border-left: none !important;
+    }
+
+    .ui.table {
+      border: none !important;
+    }
+
+    tr.er-product-specification {
+      background-color: #001689;
+      color: aliceblue;
+    }
+    
+    
+    .er-Exo {
+      font-family: "Exo", sans-serif;
+    }
+
+    .er-icon-button {
+      border-radius: 0px !important;
+    }
+
+    .content.er-share-title p {
+      color: #ffffff;
+    }
+
+    .content.er-share-title {
+      padding: 10px 20px;
+      background-color: #000000;
+    }
+
+    .er-card .meta {
+      padding-top: 10px;
+    }
+
+    .er-share-content {
+      border-bottom: 1px solid #DAD0C6;
+      padding-bottom: 9px;
+      border-left: 1px solid #DAD0C6;
+      border-right: 1px solid #DAD0C6;
+    }
+  </style>
+
+  <script type="text/javascript">
+    (function ($) {
+      $(document).ready(function () {
+
+        $('.ui.dropdown').dropdown();
+
+      });
+    })(jQuery)
+  </script>
+
+  <script type="text/x-template" id="template-summary">
   <div class="summary">
       <h1 itemprop="name" class="er-h1">{{ product.title }}</h1>
       <div  itemprop="offers" itemscope itemtype="http://schema.org/Offer">
@@ -134,7 +159,7 @@
     </div>
 </script>
 
-<script type="text/x-template" id="template-social">
+  <script type="text/x-template" id="template-social">
   <div class="uk-margin-auto"> 
       <a href="" class="uk-icon-button er-icon-button " uk-icon="icon: twitter"></a>
       <a href="" class="uk-icon-button er-icon-button " uk-icon="icon: facebook"></a>
@@ -148,17 +173,29 @@
 <body class="segment">
   <!-- Dimmer -->
   <div class="ui dimmer">
-      <div class="content">
-        <div class="center">
-          <h2 class="ui inverted icon header">
-              <div class="ui text loader">Loading</div>
-          </h2>
-        </div>
+    <div class="content">
+      <div class="center">
+        <h2 class="ui inverted icon header">
+          <div class="ui text loader">Loading</div>
+        </h2>
       </div>
     </div>
-    <!--- /dimmer -->
-	<header>
-  	<div id="er-header-top" class="uk-content uk-content-small">
+  </div>
+  <!--- /dimmer -->
+  <header>
+    <div id="er-header-top" class="uk-content uk-content-small">
+      <div class="er-navbar-top">
+        <div class="uk-container uk-container-small">
+          <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+            <div class="uk-navbar-right">
+              <ul class="uk-subnav uk-margin-remove">
+                <li><a href="#">Se connecter</a></li>
+                <li><a href="#">Condition de ventes</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
       <div class="uk-container ukt-container-small">
         <div class="uk-margin-medium-bottom uk-margin-top" uk-grid>
           <div class="uk-width-1-2 er-logo">
@@ -166,13 +203,13 @@
             <a href="#link" class="uk-logo">
               <img src="img/logo.jpg" alt="Logo Euromada" />
             </a>
-          </div>	
+          </div>
           <div class="uk-width-1-2">
             <!-- contact number -->
             <div class="er-number">
-              
+
             </div>
-            
+
           </div>
         </div>
       </div>
@@ -182,22 +219,32 @@
       <nav class="uk-navbar-container main-navigation" style="margin-bottom: 15px" uk-navbar>
         <div class="uk-navbar-right">
           <ul class="uk-subnav uk-subnav-pill er-subnav" uk-margin>
-            <li><a href="#">Accueil</a></li>
-            <li class="uk-active"><a href="offres.html">Offres</a></li>
-            <li><a href="#">Promotion</a></li>
-            <li><a href="#">Nous contacter</a></li>
-            <li class="er-publisher-car"><a href="#">Publier une voiture</a></li>
+            <li>
+              <a href="#">Accueil</a>
+            </li>
+            <li class="uk-active">
+              <a href="offres.html">Offres</a>
+            </li>
+            <li>
+              <a href="#">Promotion</a>
+            </li>
+            <li>
+              <a href="#">Nous contacter</a>
+            </li>
+            <li class="er-publisher-car">
+              <a href="#">Publier une voiture</a>
+            </li>
           </ul>
         </div>
         <div class="uk-navbar-right">
-            <ul class="uk-subnav uk-subnav-pill er-user-subnav" uk-margin>
-                <li>
-                  <a href="#">
-                    <span class="er-user-icon" uk-icon="icon: user"></span> 
-                    <span class="er-user-text">Mon compte</span>
-                  </a>
-                </li>
-              </ul>
+          <ul class="uk-subnav uk-subnav-pill er-user-subnav" uk-margin>
+            <li>
+              <a href="#">
+                <span class="er-user-icon" uk-icon="icon: user"></span>
+                <span class="er-user-text">Mon compte</span>
+              </a>
+            </li>
+          </ul>
         </div>
 
       </nav>
@@ -211,120 +258,124 @@
         <div class="uk-container uk-container-small">
           <form class="uk-grid-small" uk-grid>
             <div class="uk-width-1-6@s">
-                <select name="skills" class="ui fluid normal dropdown">
-                  <option value="">Catégorie</option>
-                  <option value="angular">Angular</option>
-                  <option value="css">CSS</option>
-                  <option value="design">Graphic Design</option>
-                </select>
+              <select name="skills" class="ui fluid normal dropdown">
+                <option value="">Catégorie</option>
+                <option value="angular">Angular</option>
+                <option value="css">CSS</option>
+                <option value="design">Graphic Design</option>
+              </select>
             </div>
             <div class="uk-width-1-6@s">
-                <select name="skills" class="ui fluid normal dropdown">
-                    <option value="">Marque</option>
-                    <option value="angular">Angular</option>
-                    <option value="css">CSS</option>
-                    <option value="design">Graphic Design</option>
-                  </select>
+              <select name="skills" class="ui fluid normal dropdown">
+                <option value="">Marque</option>
+                <option value="angular">Angular</option>
+                <option value="css">CSS</option>
+                <option value="design">Graphic Design</option>
+              </select>
             </div>
             <div class="uk-width-1-6@s">
-                <select name="skills" class="ui fluid normal dropdown">
-                    <option value="">Modèle</option>
-                    <option value="angular">Angular</option>
-                    <option value="css">CSS</option>
-                    <option value="design">Graphic Design</option>
-                  </select>
+              <select name="skills" class="ui fluid normal dropdown">
+                <option value="">Modèle</option>
+                <option value="angular">Angular</option>
+                <option value="css">CSS</option>
+                <option value="design">Graphic Design</option>
+              </select>
             </div>
             <div class="uk-width-1-6@s">
-                <select name="skills" class="ui fluid normal dropdown">
-                    <option value="">Prix maxi</option>
-                    <option value="angular">Angular</option>
-                    <option value="css">CSS</option>
-                    <option value="design">Graphic Design</option>
-                  </select>
+              <select name="skills" class="ui fluid normal dropdown">
+                <option value="">Prix maxi</option>
+                <option value="angular">Angular</option>
+                <option value="css">CSS</option>
+                <option value="design">Graphic Design</option>
+              </select>
             </div>
             <div class="uk-width-1-6@s">
-                <select name="skills" class="ui fluid normal dropdown">
-                    <option value="">Carburant</option>
-                    <option value="angular">Angular</option>
-                    <option value="css">CSS</option>
-                    <option value="design">Graphic Design</option>
-                  </select>
+              <select name="skills" class="ui fluid normal dropdown">
+                <option value="">Carburant</option>
+                <option value="angular">Angular</option>
+                <option value="css">CSS</option>
+                <option value="design">Graphic Design</option>
+              </select>
             </div>
             <div class="uk-width-1-6@s">
-                <button class="uk-button uk-button-euromada er-button-search">CHERCHER</button>
+              <button class="uk-button uk-button-euromada er-button-search">CHERCHER</button>
             </div>
           </form>
         </div>
       </div>
-      
+
     </section>
 
     <div id="primary-content">
       <div class="uk-section uk-section-large uk-padding-medium">
         <div id="app-product" class="uk-container uk-container-small">
           <div v-if="access" uk-grid>
-            
-            <div class="uk-width-2-3@m">
-                <div id="slider" class="uk-position-relative" uk-slideshow="animation: fade" style="margin-bottom: 7em;">
-                  <ul class="uk-slideshow-items">
-                    <li v-for="image in product.gallery"><img v-bind:src="image" v-bind:alt="product.title" uk-cover></li>
-                  </ul>
-                    
-                  <div class="uk-position-bottom-center uk-position-small" style="bottom: -7em;">
-                    <div>
-                        <ul class="uk-thumbnav">
-                            <li v-for="(image, index) in product.gallery" v-bind:uk-slideshow-item="index">
-                              <a href="#"><img v-bind:src="image" width="100" v-bind:alt="product.title"></a>
-                            </li>
-                          </ul>
-                    </div>
-                    
-                  </div>
-                </div>
-                <div class="uk-padding-large uk-padding-remove-left uk-padding-remove-right">
-                  <table class="ui celled table" v-if="product.attributes != undefined">
-                    <tbody>
-                      <tr class="er-product-specification">
-                        <td class="uk-text-uppercase">Spécification</td>
-                        <td></td>
-                      </tr>
-                      <tr v-if="product.attributes.villeChaingy">
-                        <td>VilleChaingy</td>
-                        <td>{{ product.attributes.villeChaingy }}</td>
-                      </tr>
-                      <tr v-if="product.attributes.Mark" class="active">
-                        <td>Marque</td>
-                        <td>{{ product.attributes.Mark }}</td>
-                      </tr>
-                      <tr v-if="product.attributes.Model">
-                        <td>Modèle</td>
-                        <td>{{ product.attributes.Model }}</td>
-                      </tr>
-                      <tr v-if="product.attributes.modelYear" class="active">
-                        <td>Année-modèle</td>
-                        <td>{{ product.attributes.modelYear }}</td>
-                      </tr>
-                      <tr v-if="product.attributes.Mileage">
-                        <td>Kilométrage</td>
-                        <td>{{ product.attributes.Mileage }}</td>
-                      </tr>
-                      <tr v-if="product.attributes.Fuel" class="active">
-                        <td>Carburant</td>
-                        <td>{{ product.attributes.Fuel }}</td>
-                      </tr>
-                      <tr v-if="product.attributes.GearBox">
-                        <td>Boite de vitesse</td>
-                        <td>{{ product.attributes.GearBox }}</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
 
-                <div>
-                  <h2 class="er-h2 er-Exo">Description</h2>
-                  <p v-html="product.description"></p>
-                  <p v-if="product.description == undefined">Aucune description.</p> 
+            <div class="uk-width-2-3@m">
+              <div id="slider" class="uk-position-relative" uk-slideshow="animation: fade" style="margin-bottom: 7em;">
+                <ul class="uk-slideshow-items">
+                  <li v-for="image in product.gallery">
+                    <img v-bind:src="image" v-bind:alt="product.title" uk-cover>
+                  </li>
+                </ul>
+
+                <div class="uk-position-bottom-center uk-position-small" style="bottom: -7em;">
+                  <div>
+                    <ul class="uk-thumbnav">
+                      <li v-for="(image, index) in product.gallery" v-bind:uk-slideshow-item="index">
+                        <a href="#">
+                          <img v-bind:src="image" width="100" v-bind:alt="product.title">
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+
                 </div>
+              </div>
+              <div class="uk-padding-large uk-padding-remove-left uk-padding-remove-right">
+                <table class="ui celled table" v-if="product.attributes != undefined">
+                  <tbody>
+                    <tr class="er-product-specification">
+                      <td class="uk-text-uppercase">Spécification</td>
+                      <td></td>
+                    </tr>
+                    <tr v-if="product.attributes.villeChaingy">
+                      <td>VilleChaingy</td>
+                      <td>{{ product.attributes.villeChaingy }}</td>
+                    </tr>
+                    <tr v-if="product.attributes.Mark" class="active">
+                      <td>Marque</td>
+                      <td>{{ product.attributes.Mark }}</td>
+                    </tr>
+                    <tr v-if="product.attributes.Model">
+                      <td>Modèle</td>
+                      <td>{{ product.attributes.Model }}</td>
+                    </tr>
+                    <tr v-if="product.attributes.modelYear" class="active">
+                      <td>Année-modèle</td>
+                      <td>{{ product.attributes.modelYear }}</td>
+                    </tr>
+                    <tr v-if="product.attributes.Mileage">
+                      <td>Kilométrage</td>
+                      <td>{{ product.attributes.Mileage }}</td>
+                    </tr>
+                    <tr v-if="product.attributes.Fuel" class="active">
+                      <td>Carburant</td>
+                      <td>{{ product.attributes.Fuel }}</td>
+                    </tr>
+                    <tr v-if="product.attributes.GearBox">
+                      <td>Boite de vitesse</td>
+                      <td>{{ product.attributes.GearBox }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div>
+                <h2 class="er-h2 er-Exo">Description</h2>
+                <p v-html="product.description"></p>
+                <p v-if="product.description == undefined">Aucune description.</p>
+              </div>
             </div>
             <div class="uk-width-1-3@m">
               <div itemscope itemtype="http://schema.org/Product">
@@ -332,31 +383,41 @@
               </div>
 
               <section class="uk-margin-top">
-                  <div class="ui centered er-card">
-                    <div class="content er-share-title">
-                        <p class="header uk-text-uppercase er-h2">PARTAGER L'ANNONCE</p>
-                    </div>
-                    <div class="content er-share-content">
-                      <div class="meta uk-flex">
-                        <social-media></social-media>
-                      </div>
+                <div class="ui centered er-card">
+                  <div class="content er-share-title">
+                    <p class="header uk-text-uppercase er-h2">PARTAGER L'ANNONCE</p>
+                  </div>
+                  <div class="content er-share-content">
+                    <div class="meta uk-flex">
+                      <social-media></social-media>
                     </div>
                   </div>
-                </section>
+                </div>
+              </section>
 
             </div>
           </div>
 
           <div id="app-other-publisher" class="uk-margin-large-top">
-            <div class="uk-flex"><h2 class="uk-text-uppercase uk-text-center uk-margin-auto er-h2 er-underline">Autre annonces</h2></div>
+            <div class="uk-flex">
+              <h2 class="uk-text-uppercase uk-text-center uk-margin-auto er-h2 er-underline">Autre annonces</h2>
+            </div>
             <div class="uk-container uk-container-small uk-margin-top">
-              <p class="uk-text-center uk-margin-auto uk-width-xlarge">Vous pouvez également consulter d’autres sites web à partir des liens ci-dessous.
-                Communiquez-nous la référence que vous souhaitez commander et nous vous ferons un devis.</p>
+              <p class="uk-text-center uk-margin-auto uk-width-xlarge">Vous pouvez également consulter d’autres sites web à partir des liens ci-dessous. Communiquez-nous la référence
+                que vous souhaitez commander et nous vous ferons un devis.</p>
               <div class="uk-width-xlarge uk-margin-auto" uk-grid>
-                <div class="uk-width-1-4@s"><img class="uk-logo" src="img/logo/leboncoin.jpg" /></div>
-                <div class="uk-width-1-4@s"><img class="uk-logo" src="img/logo/paruvendu.jpg" /></div>
-                <div class="uk-width-1-4@s"><img class="uk-logo" src="img/logo/mobile.de.jpg" /></div>
-                <div class="uk-width-1-4@s"><img class="uk-logo" src="img/logo/europe-camions.jpg" /></div>
+                <div class="uk-width-1-4@s">
+                  <img class="uk-logo" src="img/logo/leboncoin.jpg" />
+                </div>
+                <div class="uk-width-1-4@s">
+                  <img class="uk-logo" src="img/logo/paruvendu.jpg" />
+                </div>
+                <div class="uk-width-1-4@s">
+                  <img class="uk-logo" src="img/logo/mobile.de.jpg" />
+                </div>
+                <div class="uk-width-1-4@s">
+                  <img class="uk-logo" src="img/logo/europe-camions.jpg" />
+                </div>
 
               </div>
             </div>
@@ -375,15 +436,17 @@
                 <span class="er-footer-icon" uk-icon="icon: quote-right; ratio: 2"></span>
                 <h2 class="er-footer-title uk-margin-remove-top uk-text-uppercase">DES CLIENTS SATISFAITS</h2>
                 <p class="uk-padding-remove uk-margin-remove er-footer-meta">Lire tous les témoignages</p>
-                <div class="uk-margin-small-top"><div class="ui rating" data-rating="3" data-max-rating="5"></div></div>
-                
+                <div class="uk-margin-small-top">
+                  <div class="ui rating" data-rating="3" data-max-rating="5"></div>
+                </div>
+
                 <script type="text/javascript">
 
-                (function($){
-                  $( document ).ready(function() {
-                    $( '.ui.rating' ).rating();
-                  });
-                })(jQuery)
+    (function ($) {
+      $(document).ready(function () {
+        $('.ui.rating').rating();
+      });
+    })(jQuery)
 
                 </script>
 
@@ -391,68 +454,77 @@
             </div>
             <div class="uk-width-1-3@s">
               <div class="er-social">
-                  <span class="er-footer-icon" uk-icon="icon: facebook; ratio: 2"></span>
-                  <h2 class="er-footer-title uk-margin-remove-top uk-text-uppercase">SUR FACEBOOK</h2>
-                  <p class="uk-padding-remove uk-margin-remove er-footer-meta">Visiter notre page Facebook</p>
+                <span class="er-footer-icon" uk-icon="icon: facebook; ratio: 2"></span>
+                <h2 class="er-footer-title uk-margin-remove-top uk-text-uppercase">SUR FACEBOOK</h2>
+                <p class="uk-padding-remove uk-margin-remove er-footer-meta">Visiter notre page Facebook</p>
 
-                  <div id="fb-root"></div>
-                  <script>
-                    (function(d, s, id) {
+                <div id="fb-root"></div>
+                <script>
+                    (function (d, s, id) {
                       var js, fjs = d.getElementsByTagName(s)[0];
                       if (d.getElementById(id)) return;
                       js = d.createElement(s); js.id = id;
                       js.src = 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.11&appId=1407102892874754';
                       fjs.parentNode.insertBefore(js, fjs);
                     }(document, 'script', 'facebook-jssdk'));
-                  </script>
+                </script>
 
-                  <div class="fb-page" data-href="https://www.facebook.com/Euromadautomobile/" data-tabs="timeline" data-small-header="true" 
+                <div class="fb-page" data-href="https://www.facebook.com/Euromadautomobile/" data-tabs="timeline" data-small-header="true"
                   data-adapt-container-width="true" data-height="200" data-hide-cover="false" data-show-facepile="false">
-                    <blockquote cite="https://www.facebook.com/Euromadautomobile/" class="fb-xfbml-parse-ignore">
-                      <a href="https://www.facebook.com/Euromadautomobile/">Euromada</a>
-                    </blockquote>
-                  </div>
+                  <blockquote cite="https://www.facebook.com/Euromadautomobile/" class="fb-xfbml-parse-ignore">
+                    <a href="https://www.facebook.com/Euromadautomobile/">Euromada</a>
+                  </blockquote>
+                </div>
 
               </div>
             </div>
             <div class="uk-width-1-3@s">
               <div class="er-contact">
-                  <span class="er-footer-icon" uk-icon="icon: mail; ratio: 2"></span>
-                  <h2 class="er-footer-title uk-margin-remove-top uk-text-uppercase">CONTACTEZ NOUS</h2>
-                  <div class="ui list">
-                      <div class="item">
-                        <i class="icon"><span uk-icon="icon: location"></span></i>
-                        <div class="content">
-                          Immeuble "LA VALLEE" Ampahibe ANTANANIRIVO 101
-                        </div>
-                      </div>
-                      <div class="item">
-                          <i class="icon"><span uk-icon="icon: phone"></span></i>
-                        <div class="content">
-                            00261 32 632 95 05, <br />
-                            00261 34 114 80 51
-                        </div>
-                      </div>
-                      <div class="item">
-                         <i class="icon"><span uk-icon="icon: mail"></span></i>
-                        <div class="content">
-                          <a href="mailto:automobile@euromada.fr">automobile@euromada.fr</a>
-                        </div>
-                      </div>
-                      <div class="item">
-                        <i class="icon"><span uk-icon="icon: world"></span></i>
-                        <div class="content">
-                          <a href="http://www.euromada.fr">euromada.fr</a>
-                        </div>
-                      </div>
+                <span class="er-footer-icon" uk-icon="icon: mail; ratio: 2"></span>
+                <h2 class="er-footer-title uk-margin-remove-top uk-text-uppercase">CONTACTEZ NOUS</h2>
+                <div class="ui list">
+                  <div class="item">
+                    <i class="icon">
+                      <span uk-icon="icon: location"></span>
+                    </i>
+                    <div class="content">
+                      Immeuble "LA VALLEE" Ampahibe ANTANANIRIVO 101
                     </div>
+                  </div>
+                  <div class="item">
+                    <i class="icon">
+                      <span uk-icon="icon: phone"></span>
+                    </i>
+                    <div class="content">
+                      00261 32 632 95 05,
+                      <br /> 00261 34 114 80 51
+                    </div>
+                  </div>
+                  <div class="item">
+                    <i class="icon">
+                      <span uk-icon="icon: mail"></span>
+                    </i>
+                    <div class="content">
+                      <a href="mailto:automobile@euromada.fr">automobile@euromada.fr</a>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <i class="icon">
+                      <span uk-icon="icon: world"></span>
+                    </i>
+                    <div class="content">
+                      <a href="http://www.euromada.fr">euromada.fr</a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </footer>
-  	
+
   </div>
 </body>
+
 </html>
