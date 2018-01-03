@@ -179,74 +179,74 @@
 
             <ul id="er-annonce" class="uk-switcher uk-margin">
 
-                <li class="uk-position-relative">
-                  <div class="ui special cards">
-                    <div class="card" v-for="todo in itemI">
-                      <div class="blurring dimmable image">
-                        <div class="ui dimmer">
-                          <div class="content">
-                            <div class="center">
-                              <div class="ui inverted button">Voir</div>
-                            </div>
+              <li class="uk-position-relative">
+                <div class="ui special cards">
+                  <div class="card" v-for="todo in itemI">
+                    <div class="blurring dimmable image">
+                      <div class="ui dimmer">
+                        <div class="content">
+                          <div class="center">
+                            <div class="ui inverted button" @click="routeLinkView(todo.id)">Voir</div>
                           </div>
                         </div>
-                        <img v-bind:src="todo.link">
                       </div>
-                      <div class="content">
-                        <a class="header er-h2">{{ todo.title }}</a>
-                        <div class="meta">
-                          <span class="cost">{{ todo.cost | ariary }} </span>
-                        </div>
+                      <img v-bind:src="todo.link">
+                    </div>
+                    <div class="content">
+                      <a class="header er-h2">{{ todo.title }}</a>
+                      <div class="meta">
+                        <span class="cost">{{ todo.cost | ariary }} </span>
                       </div>
                     </div>
                   </div>
-                </li>
+                </div>
+              </li>
 
-                <li>
-                  <div class="ui special cards">
-                    <div class="card" v-for="todo in itemII">
-                      <div class="blurring dimmable image">
-                        <div class="ui dimmer">
-                          <div class="content">
-                            <div class="center">
-                              <div class="ui inverted button">Voir</div>
-                            </div>
+              <li>
+                <div class="ui special cards">
+                  <div class="card" v-for="todo in itemII">
+                    <div class="blurring dimmable image">
+                      <div class="ui dimmer">
+                        <div class="content">
+                          <div class="center">
+                            <div class="ui inverted button" @click="routeLinkView(todo.id)">Voir</div>
                           </div>
                         </div>
-                        <img v-bind:src="todo.link">
                       </div>
-                      <div class="content">
-                        <a class="header er-h2">{{ todo.title }}</a>
-                        <div class="meta">
-                          <span class="cost">{{ todo.cost | ariary }}</span>
-                        </div>
+                      <img v-bind:src="todo.link">
+                    </div>
+                    <div class="content">
+                      <a class="header er-h2">{{ todo.title }}</a>
+                      <div class="meta">
+                        <span class="cost">{{ todo.cost | ariary }}</span>
                       </div>
                     </div>
                   </div>
-                </li>
+                </div>
+              </li>
 
-                <li>
-                  <div class="ui special cards">
-                    <div class="card" v-for="todo in itemIII">
-                      <div class="blurring dimmable image">
-                        <div class="ui dimmer">
-                          <div class="content">
-                            <div class="center">
-                              <div class="ui inverted button">Voir</div>
-                            </div>
+              <li>
+                <div class="ui special cards">
+                  <div class="card" v-for="todo in itemIII">
+                    <div class="blurring dimmable image">
+                      <div class="ui dimmer">
+                        <div class="content">
+                          <div class="center">
+                            <div class="ui inverted button" @click="routeLinkView(todo.id)">Voir</div>
                           </div>
                         </div>
-                        <img v-bind:src="todo.link">
                       </div>
-                      <div class="content">
-                        <a class="header er-h2">{{ todo.title }}</a>
-                        <div class="meta">
-                          <span class="cost">{{ todo.cost | ariary }} </span>
-                        </div>
+                      <img v-bind:src="todo.link">
+                    </div>
+                    <div class="content">
+                      <a class="header er-h2">{{ todo.title }}</a>
+                      <div class="meta">
+                        <span class="cost">{{ todo.cost | ariary }} </span>
                       </div>
                     </div>
                   </div>
-                </li>
+                </div>
+              </li>
             </ul>
 
             <div class="uk-flex uk-flex-center">

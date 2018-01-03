@@ -1,28 +1,93 @@
 window.onload = function () {
   /** On load document */
 
-  var carLists = [{
-      title: "NISSAN QASHQAI S 2017",
-      cost: 20548000,
-      link: 'img/products/auto.png'
+  moment.locale("fr");
+  var adverts = [
+    {
+      id: 1,
+      title: "Mercedes ml 270 cdi",
+      cost: 27500000,
+      countPic: 7,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit orci porta quam scelerisque " +
+      "elementum. Donec orci nisi, pulvinar vitae mollis eu, finibus quis justo. Orci varius natoque penatibus et magnis dis" + 
+      "parturient montes, nascetur ridiculus mus. Sed vitae tortor vel diam lobortis dignissim. Maecenas varius ante sit amet "+ 
+      "ex ornare congue. Fusce ac lorem hendrerit, egestas tortor quis, venenatis felis. Ut vitae ipsum et nisl tristique tempor.",
+      dateadd: moment().startOf('day').fromNow(),
+      link: 'img/products/auto.png',
+      gallery: [
+        'img/products/auto1.png',
+        'img/products/auto2.png',
+        'img/products/auto3.png'
+      ],
+      attributes : {
+        Mark: "Mercedes",
+        Model: "Classe M",
+        modelYear: "2002",
+        Mileage: "213000",
+        Fuel: "Diesel",
+        GearBox: "Automatique"
+      }
     },
     {
-      title: "TCe 90 Energy Intens S&S eco2",
+      id: 2,
+      title: "TCe 90 Energy Intens",
       cost: 13000000,
-      link: 'img/products/auto1.png'
+      countPic: 2,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit orci porta quam scelerisque " +
+      "elementum. Donec orci nisi, pulvinar vitae mollis eu, finibus quis justo. Orci varius natoque penatibus et magnis dis" + 
+      "parturient montes, nascetur ridiculus mus. Sed vitae tortor vel diam lobortis dignissim. Maecenas varius ante sit amet "+ 
+      "ex ornare congue. Fusce ac lorem hendrerit, egestas tortor quis, venenatis felis. Ut vitae ipsum et nisl tristique tempor.",
+      dateadd: moment().startOf('hour').fromNow(),
+      link: 'img/products/auto1.png',
+      gallery: [
+        'img/products/auto.png',
+        'img/products/auto2.png',
+        'img/products/auto3.png'
+      ],
+      attributes : {
+        Mark: "Mercedes",
+        Model: "Classe B",
+        modelYear: "2000",
+        Mileage: "213000",
+        Fuel: "Diesel",
+        GearBox: "Automatique"
+      }
     },
     {
+      id: 3,
       title: "Land Rover Range",
       cost: 12490000,
-      link: 'img/products/auto2.png'
+      countPic: 4,
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit orci porta quam scelerisque " +
+      "elementum. Donec orci nisi, pulvinar vitae mollis eu, finibus quis justo. Orci varius natoque penatibus et magnis dis" + 
+      "parturient montes, nascetur ridiculus mus. Sed vitae tortor vel diam lobortis dignissim. Maecenas varius ante sit amet "+ 
+      "ex ornare congue. Fusce ac lorem hendrerit, egestas tortor quis, venenatis felis. Ut vitae ipsum et nisl tristique tempor.",
+      dateadd: moment().subtract(3, 'days').calendar(),
+      link: 'img/products/auto2.png',
+      gallery: [
+        'img/products/auto1.png',
+        'img/products/auto2.png',
+        'img/products/auto3.png'
+      ],
+      attributes : {
+        Mark: "Rover",
+        Model: "Classe B",
+        modelYear: "2000",
+        Mileage: "213000",
+        Fuel: "Diesel",
+        GearBox: "Automatique"
+      }
     },
     {
+      id: 4,
       title: "Renault Captur",
       cost: 1509000,
+      countPic: 1,
+      dateadd: moment().subtract(6, 'days').calendar(),
       link: 'img/products/auto3.png'
     }
   ];
-
+  /** Filter and Component vue */
   Vue.filter('ariary', function (value) {
     var v = parseFloat(value);
     if (isNaN(v)) return value;
@@ -34,6 +99,11 @@ window.onload = function () {
 
   Vue.component('pagination', {
     template: '#template-pagination'
+  });
+
+  Vue.component('social-media', {
+    template: '#template-social',
+    props: ['product']
   });
   
   Vue.component('psummary', {
@@ -47,12 +117,20 @@ window.onload = function () {
     },
   });
 
+  /** End */
+
   new Vue({
     el: '#app-publisher',
     data: {
-      itemI: _.sortBy(carLists, 'title'),
-      itemII: _.sortBy(carLists, 'cost'),
-      itemIII: _.sortBy(carLists, 'link'),
+      itemI: _.sortBy(adverts, 'title'),
+      itemII: _.sortBy(adverts, 'cost'),
+      itemIII: _.sortBy(adverts, 'link'),
+    },
+    methods: {
+      routeLinkView: function(product_id) {
+        var link = "products.html?_id=";
+        window.location.href = link + product_id;
+      }
     },
     mounted: function () {
       jQuery('.special.cards').find('.image').dimmer({
@@ -83,56 +161,6 @@ window.onload = function () {
     }
   });
 
-  moment.locale("fr");
-  var adverts = [{
-    id: 1,
-    title: "Mercedes ml 270 cdi",
-    cost: 27500000,
-    countPic: 7,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas suscipit orci porta quam scelerisque " +
-    "elementum. Donec orci nisi, pulvinar vitae mollis eu, finibus quis justo. Orci varius natoque penatibus et magnis dis" + 
-    "parturient montes, nascetur ridiculus mus. Sed vitae tortor vel diam lobortis dignissim. Maecenas varius ante sit amet "+ 
-    "ex ornare congue. Fusce ac lorem hendrerit, egestas tortor quis, venenatis felis. Ut vitae ipsum et nisl tristique tempor.",
-    dateadd: moment().startOf('day').fromNow(),
-    link: 'img/products/auto.png',
-    gallery: [
-
-    ],
-    attributes : {
-      Mark: "Mercedes",
-      Model: "Classe M",
-      modelYear: "2002",
-      Mileage: "213000",
-      Fuel: "Diesel",
-      GearBox: "Automatique"
-    }
-  },
-  {
-    id: 2,
-    title: "TCe 90 Energy Intens S&S eco2",
-    cost: 13000000,
-    countPic: 2,
-    dateadd: moment().startOf('hour').fromNow(),
-    link: 'img/products/auto1.png'
-  },
-  {
-    id: 3,
-    title: "Land Rover Range",
-    cost: 12490000,
-    countPic: 4,
-    dateadd: moment().subtract(3, 'days').calendar(),
-    link: 'img/products/auto2.png'
-  },
-  {
-    id: 4,
-    title: "Renault Captur",
-    cost: 1509000,
-    countPic: 1,
-    dateadd: moment().subtract(6, 'days').calendar(),
-    link: 'img/products/auto3.png'
-  }
-  ];
-
   new Vue({
     el: "#app-lists",
     data: {
@@ -152,11 +180,12 @@ window.onload = function () {
       }
     }
   });
+
+
   var router = ( ! _.isUndefined(window.VueRouter)) ? new VueRouter({
     mode: 'history',
     routes: []
   }) : false;
-  
   if (router)
     var vProduct = new Vue({
       router,
